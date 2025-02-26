@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="sidenav.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <title>Report</title>
+</head>
+
+<body>
+  <div class="dashboard">
+       <!-- Start Sidebar Navigation -->
+       <nav class="sidebar" id="sidebar">
+        <h2>Fathalla Market</h2>
+        <ul>
+            <li><a href="./dashboard.html"><img src="Image/cogwheel.svg" class="menu-icon"> <span>Setting</span></a></li>
+            <li><a href="./construction.html"><img src="Image/work.svg" class="menu-icon"> <span>Create</span></a></li>
+            <li><a href="./draw.html"><img src="Image/reward.svg" class="menu-icon"> <span>Draw</span></a></li>
+            <li><a href="./registration.html"><img src="Image/statistic-report.svg" class="menu-icon"> <span>Registration</span></a></li>
+            <li><a href="./report.html"><img src="Image/business-report.svg" class="menu-icon"> <span>Report</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Toggle Button -->
+    <button class="toggle-btn" id="toggleBtn">✖</button>
+    <!-- End Sidebar Navigation -->
+
+    <div class="content">
+      <main>
+        <div class="container pb-5 pt-5">
+          <div class="row">
+            <div class="col-12 py-5" dir="rtl">
+              <h4 class="text-center mb-4 ">جدول تقارير المهرجانات</h4>
+              <br>
+              <div class="table-responsive">
+                <table class="table table-bordered ">
+                  <thead class="thead-dark table-primary ">
+                    <tr>
+                      <th>رقم المهرجان</th>
+                      <th>تاريخ المهرجان</th>
+                      <th>اسم المهرجان</th>
+                      <th>الفرع</th>
+                      <th>التقرير</th>
+                      <th>طباعة</th>
+                    </tr>
+                  </thead>
+                  <tbody id="festival-table-body">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="row ">
+
+            <div class="col-md-6">
+              <div class="input-group mb-3 col-4">
+                <span class="input-group-text"><span class="material-icons search-icon">search</span></span>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username" />
+                  <label for="floatingInputGroup1">Number Cliant</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="input-group mb-3 col-4">
+                <span class="input-group-text"><span class="material-icons search-icon">qr_code_scanner</span></span>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username" />
+                  <label for="floatingInputGroup1">Scan Code</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="row ">
+            <div class="col-md-6 offset-md-3">
+              <button id="sendDataBtn" class="btn btn-success">Search</button>
+            </div>
+          </div>
+
+          <div class="row pb-5">
+            <div class="col-12 mt-5" dir="rtl">
+              <h4 class="text-center mb-4 ">جدول العميل </h4>
+              <br>
+              <div class="table-responsive">
+                <table class="table table-bordered ">
+                  <thead class="thead-dark table-primary ">
+                    <tr>
+                      <th>رقم المهرجان</th>
+                      <th>تاريخ المهرجان</th>
+                      <th>اسم المهرجان</th>
+                      <th>الفرع</th>
+                      <th>التقرير</th>
+                      <th>طباعة</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>15/09/2024</td>
+                      <td>مهرجان الفن الحديث</td>
+                      <td>فرع القاهرة</td>
+                      <td><a href="#">view</a></td>
+                      <td><a href="#">Print</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </main>
+
+
+      <footer class="bg-dark text-light text-center py-3 ">
+        <div class="container-fluid">
+          <p>All rights reserved. © Fathalla | Programming Department "2024".</p>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const toggleBtn = document.getElementById("toggleBtn");
+
+    toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
+
+        if (sidebar.classList.contains("collapsed")) {
+            toggleBtn.innerHTML = "☰";
+        } else {
+            toggleBtn.innerHTML = "✖";
+        }
+    });
+</script>
+  <script>
+    const festivals = [
+      { id: 1, date: "07/09/2024", name: "حلواني", branch: "فرع القاهرة" },
+      { id: 2, date: "08/10/2024", name: "حلواني", branch: "فرع الجيزة" },
+      { id: 3, date: "10/11/2024", name: "الفن العربي", branch: "فرع الإسكندرية" },
+      { id: 4, date: "12/12/2024", name: "القاهرة الدولي", branch: "فرع المنصورة" },
+      { id: 5, date: "15/01/2025", name: "الموسيقى الشرقية", branch: "فرع الأقصر" },
+      { id: 6, date: "20/02/2025", name: "الطرب الأصيل", branch: "فرع أسوان" },
+      { id: 7, date: "05/03/2025", name: "الشباب والرياضة", branch: "فرع سوهاج" },
+      { id: 8, date: "10/04/2025", name: "فن وثقافة", branch: "فرع دمياط" },
+      { id: 9, date: "20/05/2025", name: "الأفلام السينمائية", branch: "فرع بورسعيد" },
+      { id: 10, date: "30/06/2025", name: "المسرح الوطني", branch: "فرع الإسماعيلية" }
+    ];
+
+    const tableBody = document.getElementById("festival-table-body");
+
+    festivals.forEach(festival => {
+      const row = `
+            <tr>
+                <td>${festival.id}</td>
+                <td>${festival.date}</td>
+                <td>${festival.name}</td>
+                <td>${festival.branch}</td>
+                <td><a href="#">view</a></td>
+                <td><a href="#">Print</a></td>
+            </tr>
+        `;
+      tableBody.innerHTML += row;
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

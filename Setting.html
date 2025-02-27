@@ -12,20 +12,21 @@
 
 <body>
   <div class="dashboard">
-       <!-- Start Sidebar Navigation -->
-       <nav class="sidebar" id="sidebar">
-        <h2>Fathalla Market</h2>
-        <ul>
-            <li><a href="./Setting.html"><img src="Image/cogwheel.svg" class="menu-icon"> <span>Setting</span></a></li>
-            <li><a href="./Create.html"><img src="Image/work.svg" class="menu-icon"> <span>Create</span></a></li>
-            <li><a href="./draw.html"><img src="Image/reward.svg" class="menu-icon"> <span>Draw</span></a></li>
-            <li><a href="./registration.html"><img src="Image/statistic-report.svg" class="menu-icon"> <span>Registration</span></a></li>
-            <li><a href="./report.html"><img src="Image/business-report.svg" class="menu-icon"> <span>Report</span></a></li>
-        </ul>
+    <!-- Start Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+      <h2>Fathalla Market</h2>
+      <ul>
+        <li><a href="./Setting.html"><img src="Image/cogwheel.svg" class="menu-icon"> <span>Setting</span></a></li>
+        <li><a href="./Create.html"><img src="Image/work.svg" class="menu-icon"> <span>Create</span></a></li>
+        <li><a href="./draw.html"><img src="Image/reward.svg" class="menu-icon"> <span>Draw</span></a></li>
+        <li><a href="./registration.html"><img src="Image/statistic-report.svg" class="menu-icon">
+            <span>Registration</span></a></li>
+        <li><a href="./report.html"><img src="Image/business-report.svg" class="menu-icon"> <span>Report</span></a></li>
+      </ul>
     </nav>
 
     <!-- Toggle Button -->
-    <button class="toggle-btn" id="toggleBtn">✖</button>
+    <button class="toggle-btn" id="toggleBtn">X</button>
     <!-- End Sidebar Navigation -->
     <div class="content">
       <main>
@@ -102,15 +103,15 @@
     const toggleBtn = document.getElementById("toggleBtn");
 
     toggleBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("collapsed");
+      sidebar.classList.toggle("collapsed");
 
-        if (sidebar.classList.contains("collapsed")) {
-            toggleBtn.innerHTML = "☰";
-        } else {
-            toggleBtn.innerHTML = "✖";
-        }
+      if (sidebar.classList.contains("collapsed")) {
+        toggleBtn.innerHTML = "☰";
+      } else {
+        toggleBtn.innerHTML = "X";
+      }
     });
-</script>
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>

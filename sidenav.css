@@ -18,12 +18,9 @@ html {
   height: 100vh;
   background: #231f20;
   color: white;
-  position: fixed;
-  left: 0;
-  top: 0;
   transition: width 0.3s ease-in-out;
   padding: 20px;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .sidebar h2 {
@@ -65,7 +62,7 @@ html {
 
 /* Sidebar Collapsed State */
 .sidebar.collapsed {
-  width: 80px;
+  width: 120px;
 }
 
 .sidebar.collapsed h2 {
@@ -93,10 +90,11 @@ html {
   border-radius: 5px;
   transition: left 0.3s ease-in-out;
   font-size: 18px;
+  font-weight: bold;
 }
 
-.sidebar.collapsed + .toggle-btn {
-  left: 50px;
+.sidebar.collapsed+.toggle-btn {
+  left: 96px;
 }
 
 /* Icon Styling */
@@ -160,11 +158,11 @@ main {
   border-radius: 50%;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(26px);
 }
 
